@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوحة مواقيت الصلاة</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <div class="top-side top-side-right">
+        <div id="gregorianDate" class="greg-date"></div>
+        <div id="hijriDate" class="subdate"></div>
+      </div>
+
+      <div class="top-center">
+        <div id="mosqueName" class="mosque-name">اسم الجامع</div>
+        <div id="dedication" class="dedication" hidden></div>
+      </div>
+
+      <div class="top-side top-side-left">
+        <div id="locationLabel" class="location-label"></div>
+        <a class="settings-link" href="settings.html" title="الإعدادات">الإعدادات</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="countdown-card">
+        <div id="nextPrayerLabel" class="count-title">المتبقي للصلاة</div>
+        <div id="countdown" class="count-value">--:--:--</div>
+        <div id="nextPrayerTime" class="count-time"></div>
+      </div>
+
+      <div class="clock-wrap">
+        <canvas id="analogClock" class="analog-clock" width="250" height="250" hidden></canvas>
+        <div id="digitalClockWrap" class="digital-clock-wrap">
+          <div id="clock" class="clock">00:00</div>
+          <div id="secondsAmPm" class="seconds-ampm">00<br>ص</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="table-wrap">
+      <div class="table-head row row-two">
+        <div>الصلاة</div>
+        <div>وقت الأذان</div>
+      </div>
+      <div id="timesTable"></div>
+    </section>
+
+    <section id="awradSection" class="awrad-wrap" hidden>
+      <div class="awrad-title">
+        ورد يوم <span id="awradDayLabel"></span>
+      </div>
+      <div id="awradList" class="awrad-list"></div>
+    </section>
+
+    <footer class="footer">
+      <div id="designerLine" class="designer-line" hidden></div>
+      <div class="ticker-container">
+        <div id="messageTicker" class="ticker">الرجاء غلق الهاتف عند دخول المسجد</div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/locations.js"></script>
+  <script src="assets/prayer-core.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+
+</html>

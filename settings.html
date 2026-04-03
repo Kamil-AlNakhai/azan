@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إعدادات لوحة مواقيت الصلاة</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body class="settings-page">
+  <main class="settings-card">
+    <h1>إعدادات لوحة المواقيت</h1>
+
+    <div class="grid-2">
+      <label>اسم الجامع
+        <input id="mosqueInput" type="text" placeholder="مثال: جامع الإمام الحسن" />
+      </label>
+
+      <label>المحافظة / المدينة
+        <select id="citySelect"></select>
+      </label>
+
+      <label>المذهب المعتمد
+        <select id="madhabSelect">
+          <option value="jaafari">جعفري (السيد السيستاني)</option>
+          <option value="hanafi">حنفي / عام</option>
+          <option value="custom">مخصص</option>
+        </select>
+      </label>
+
+      <label>نمط الساعة
+        <select id="clockModeSelect">
+          <option value="digital">رقمية</option>
+          <option value="analog">تناظرية</option>
+          <option value="both">الاثنتان معًا</option>
+        </select>
+      </label>
+
+      <label>تعويض التاريخ الهجري (يوم)
+        <input id="hijriAdjustInput" type="number" step="1" min="-3" max="3" />
+      </label>
+
+      <label>رسالة الشريط السفلي
+        <input id="tickerInput" type="text" placeholder="الرجاء غلق الهاتف عند دخول المسجد" />
+      </label>
+    </div>
+
+    <h2>تنسيق اسم الجامع</h2>
+    <div class="grid-3">
+      <label>لون اسم الجامع
+        <input id="mosqueColorInput" type="color" />
+      </label>
+
+      <label>نوع الخط
+        <select id="mosqueFontInput"></select>
+      </label>
+
+      <label>حجم الخط
+        <input id="mosqueSizeInput" type="text" placeholder="مثال: 4.2rem أو 64px" />
+      </label>
+    </div>
+
+    <h2>تنسيق الإهداء</h2>
+    <div class="grid-3">
+      <label>لون الإهداء
+        <input id="dedicationColorInput" type="color" />
+      </label>
+
+      <label>نوع الخط
+        <select id="dedicationFontInput"></select>
+      </label>
+
+      <label>حجم الخط
+        <input id="dedicationSizeInput" type="text" placeholder="مثال: 1.25rem أو 24px" />
+      </label>
+    </div>
+
+    <h2>تنسيق أوقات الصلاة</h2>
+    <div class="grid-3">
+      <label>لون الأوقات
+        <input id="timesColorInput" type="color" />
+      </label>
+
+      <label>نوع الخط
+        <select id="timesFontInput"></select>
+      </label>
+
+      <label>حجم الخط
+        <input id="timesSizeInput" type="text" placeholder="مثال: 2.15rem أو 42px" />
+      </label>
+    </div>
+
+    <h2>تنسيق التاريخ والشريط السفلي</h2>
+    <div class="grid-3">
+      <label>لون التاريخ والموقع
+        <input id="datesColorInput" type="color" />
+      </label>
+
+      <label>نوع الخط
+        <select id="datesFontInput"></select>
+      </label>
+
+      <label>حجم الخط
+        <input id="datesSizeInput" type="text" placeholder="مثال: 1.2rem أو 20px" />
+      </label>
+
+      <label>لون الشريط السفلي
+        <input id="tickerColorInput" type="color" />
+      </label>
+
+      <label>نوع الخط
+        <select id="tickerFontInput"></select>
+      </label>
+
+      <label>حجم الخط
+        <input id="tickerSizeInput" type="text" placeholder="مثال: 1.15rem أو 18px" />
+      </label>
+    </div>
+
+    <h2>تنسيق ورد اليوم</h2>
+    <div class="grid-3">
+      <label>لون ورد اليوم
+        <input id="awradColorInput" type="color" />
+      </label>
+
+      <label>نوع الخط
+        <select id="awradFontInput"></select>
+      </label>
+
+      <label>حجم الخط
+        <input id="awradSizeInput" type="text" placeholder="مثال: 1.4rem أو 26px" />
+      </label>
+    </div>
+    <p class="note small-note">تم تثبيت أحجام الخطوط الحالية. التحكم في اللون ونوع الخط للأوقات يطبّق الآن على الساعة
+      والوقت المتبقي أيضًا.</p>
+
+    <h2>معلومات إضافية</h2>
+    <div class="grid-2">
+      <label>نص الإهداء (اختياري)
+        <input id="dedicationInput" type="text" placeholder="إهداء إلى روح المرحوم ..." />
+      </label>
+
+      <label>تصميم المهندس (اختياري)
+        <input id="designerInput" type="text" placeholder="مثال: علي جعفر" />
+      </label>
+    </div>
+    <h2>شريط الأخبار السفلي</h2>
+    <div class="grid-2">
+      <label>نص الشريط المتحرك
+        <textarea id="tickerTextInput" rows="9" placeholder="أدخل النص الذي تريد عرضه متحركاً"
+          style="width:100%; resize:vertical;"></textarea>
+      </label>
+      <label>سرعة الحركة
+        <select id="tickerSpeedSelect">
+          <option value="fast">سريع</option>
+          <option value="normal" selected>عادي</option>
+          <option value="slow">بطيء</option>
+          <option value="very-slow">بطيء جداً</option>
+        </select>
+      </label>
+      <label>عدد الكلمات في الدقيقة
+        <input id="tickerWPMInput" type="number" min="30" step="10" value="120" />
+      </label>
+    </div>
+    <p class="note small-note">افصل بين الفقرات باستخدام --- وسيتم عرض كل فقرة لوحدها. مدة بقاء الفقرة تُحسب تلقائيًا حسب عدد كلماتها، ويمكن التحكم بها من خلال خيار عدد الكلمات في الدقيقة.</p>
+
+    <h2>الحساب الشرعي</h2>
+    <div class="grid-2">
+      <label>زاوية الفجر
+        <input id="fajrAngle" type="number" step="0.1" />
+      </label>
+      <label>زاوية العشاء
+        <input id="ishaAngle" type="number" step="0.1" />
+      </label>
+      <label>زاوية المغرب الشرعي
+        <input id="maghribAngle" type="number" step="0.1" />
+      </label>
+      <label>أساس العصر
+        <select id="asrFactor">
+          <option value="1">ظل = 1</option>
+          <option value="2">ظل = 2</option>
+        </select>
+      </label>
+      <label>فرق أذان الظهر بعد الزوال (دقيقة)
+        <input id="dhuhrOffset" type="number" step="1" />
+      </label>
+    </div>
+    <p class="note small-note">عند اختيار الجعفري تُستخدم القيم الافتراضية المناسبة، ويُخفى العصر والعشاء من الشاشة
+      الرئيسية، ويُحسب الزوال مستقلًا ثم يُضاف فرق قصير لأذان الظهر.</p>
+
+    <h2>ورد الأسبوع</h2>
+    <label class="toggle-label">
+      <input id="showAwrad" type="checkbox" />
+      <span>إظهار ورد اليوم في الشاشة الرئيسية</span>
+    </label>
+
+    <div class="awrad-settings weekly-awrad-settings">
+      <div class="awrad-setting-head awrad-week-head">
+        <div>اليوم</div>
+        <div>الورد</div>
+        <div>العدد</div>
+      </div>
+      <div id="weeklyAwradRows"></div>
+    </div>
+
+    <div class="button-row">
+      <button id="saveBtn">حفظ</button>
+      <a class="button secondary" href="index.html">رجوع</a>
+    </div>
+
+    <p class="note">
+      هذه النسخة صامتة بالكامل وتعمل من الفلاش مباشرة، وتستخدم تنسيق 12 ساعة، وتُظهر الزوال والغروب، وتُخفي العصر
+      والعشاء تلقائيًا عند اختيار الجعفري، وتسمح بتخصيص لون ونوع الخط لكل مجموعة على حدة.
+    </p>
+  </main>
+
+  <script src="assets/locations.js"></script>
+  <script src="assets/prayer-core.js"></script>
+  <script src="assets/settings.js"></script>
+</body>
+
+</html>
